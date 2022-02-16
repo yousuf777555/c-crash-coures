@@ -1,0 +1,124 @@
+/* #include"header.h"
+
+int stock();
+int sales();
+int purchase();
+int add();
+int deletestock();
+int breakfun(); */
+
+supermarket.c
+
+#include<stdio.h>
+#include"header.h"
+ int b;
+ int i;
+ int c=1;
+int main()
+{
+	int n;
+	while(c)
+	{
+	printf("enter 1 to check the stock\nenter 2 to sell the stock\nenter 3 to purchase the stock\nenter 4 to quit\n");
+	scanf("%d",&n);
+	switch(n)
+		{
+			case 1:stock();
+			       printf("\nif want to quit press 4\n");
+			       continue;
+			       return 0;
+			case 2:sales();
+			        printf("\nif want to quit press 4\n");
+			       continue;
+
+			       return 0;
+			case 3:purchase();
+			        printf("\nif want to quit press 4\n");
+			       continue;
+
+			       return 0;
+			case 4:breakfun();
+			       break;
+			       return 0;
+
+			default:printf("invalid input");
+				continue;
+		}
+	}
+}
+
+
+ stock.c
+ 
+ #include<stdio.h>
+#include"header.h"
+static int a=100;
+extern int i;
+extern int b;
+extern int c;
+ extern int stock()
+{
+	printf("\nnumber of stocks is %d",a);
+	return a;
+	
+}
+ extern int add( )
+{
+	 int limit=1000;
+         printf("\nenter the purchase limit:");
+         scanf("%d",&b);
+         if(b<limit)
+         {
+                 a=a+b;
+                 return a;
+         }
+
+         else
+         {
+                 printf("\nlimit is crossed");
+	 }
+     
+}
+ extern int deletestock( )
+{
+        printf("\nenter the value for sell:");
+        scanf("%d",&i);
+                if(a>i)
+                {
+                        a=a-i;
+                        return a;
+                }
+                else
+                {
+                        printf("\nsorry not enough stock");
+                }
+}
+int breakfun()
+{
+	c=0;
+	return c;
+}
+
+
+sales.c
+
+#include<stdio.h>
+#include"header.h"
+extern int i;
+int sales()
+{
+		printf("after saleing stock is %d",deletestock());
+	return 0;
+}
+
+purchase.c
+
+#include<stdio.h>
+#include"header.h"
+extern int b;
+int purchase()
+{
+		printf(" remaining stocks is %d", add());
+	
+	 return 0;
+}

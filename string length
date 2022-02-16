@@ -1,0 +1,20 @@
+#include<stdio.h>
+int mystrlen(char a[]);
+int main()
+{
+    char a[10],s;
+    printf("enter the string\n");
+    scanf("%9[^\n]s",a);
+    printf("%s\n",a);
+   s= mystrlen(a);
+   printf("length of the string is %d",s);
+}
+int mystrlen(char a[])
+{
+	int i,c=0;
+	for(i=0;a[i] !='\0';i++)
+	{
+		c++;
+	}
+	return c;
+}

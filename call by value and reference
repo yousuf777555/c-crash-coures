@@ -1,0 +1,27 @@
+#include<stdio.h>
+int swap(int a,int b);
+int swapbyreference(int *a,int *b);
+int main()
+{
+	int a=5,b=6;
+	printf("before swapping the numbers are %d and %d\n",a,b);
+	swap(a,b);
+	swapbyreference(&a,&b);
+	 printf("values swapped by call by reference %d and %d\n",a,b);
+}
+int swap(int a,int b)
+{
+	int temp;
+	temp=a;
+	a=b;
+	b=temp;
+	printf("values swapped by call by value %d and %d\n",a,b);
+}
+int swapbyreference(int *a,int *b)
+{
+        int temp;
+        temp=*a;
+        *a=*b;
+        *b=temp;
+}
+

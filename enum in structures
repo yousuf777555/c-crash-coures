@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+	struct student
+	{
+		enum days
+                {
+			sunday,monday,tuesday,wednesday,thursday,friday
+		}a;
+		
+	}s;
+        
+
+	printf("%ld",sizeof(struct student));
+}

@@ -1,0 +1,14 @@
+#include<stdio.h>
+#define SIZE sizof(int)*8
+int main()
+{
+	int n,count=0;
+	printf("enter number");
+	scanf("%d",&n);
+	while( !(num & 1) )
+	{
+		count++;
+		num = num>>1;
+	}
+	printf("number of zeros in trailing end are %d",count);
+}

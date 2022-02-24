@@ -1,0 +1,18 @@
+#include<stdio.h>
+#define SIZE sizeof(int)*8
+int main()
+{
+	int num,count=0,i=0;
+	printf("enter the number\n");
+	scanf("%d",&num);
+	for(i=SIZE-1;i>=0;i--)
+	{
+	    if(((num>>i) & 1))
+	    {
+	     break;   
+	    }
+		count++;
+	}
+	printf("number of heading zeros is :%d\n",count);
+	return 0;
+}

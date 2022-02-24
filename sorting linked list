@@ -1,0 +1,120 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node *addatbeg(struct node *start);
+struct node *addatend(struct node *start);
+void display(struct node *start);
+void search(struct node *start);
+void sort(struct node *start);
+struct node
+{
+	int data;
+	struct node *link;
+};
+int main()
+{
+	int a;
+	struct node *start=NULL;
+	printf("enter the number nodes you want to create:");
+	scanf("%d",&a);
+	start=addatbeg(start);
+	for(int i=2;i<=a;i++)
+	{
+		start=addatend(start);
+	}
+	display(start);
+	search(start);
+	sort(start);
+	display(start);
+
+}
+struct node *addatbeg(struct node *start)
+{
+	struct node *temp;
+	temp=(struct node *)malloc(sizeof(struct node));
+	if(temp==NULL)
+	{
+		printf("memory full");
+	}
+	else
+	{
+		int m;
+		printf("enter the data");
+		scanf("%d",&m);
+		temp->data=m;
+		temp->link=start;
+		start=temp;
+		return start;
+	}
+}
+struct node *addatend(struct node *start)
+{
+	int n;
+	struct node *temp,*p;
+	temp=(struct node *)malloc(sizeof(struct node));
+	printf("enter the data");
+	scanf("%d",&n);
+	temp->data=n;
+	p=start;
+	while(p->link!=NULL)
+		p=p->link;
+	p->link=temp;
+	temp->link=NULL;
+	return start;
+}
+void display(struct node *start)
+{
+	struct node *temp=start;
+	if(temp==NULL)
+	{
+		printf("list is empty");
+	}
+	else
+	{
+		while(temp!=NULL)
+		{
+			printf("%d\n",temp->data);
+			temp=temp->link;
+		}
+	}
+}
+void search(struct node *start)
+{
+	struct node *p=start;
+	int pos=1,element;
+	printf("enter the element to search");
+	scanf("%d",&element);
+	while(p!=NULL)
+	{
+		if(p->data==element)
+		{
+			printf("element is found %d\n",element);
+			return;
+		}
+		p=p->link;
+		pos++;
+	}
+	printf("element not found");
+}
+void sort(struct node *start)
+{
+	int temp;
+	struct node *ptr,*cpt;
+	ptr=start;
+	while(ptr->link!=NULL)
+	{
+		cpt=ptr->link;
+		while(cpt!=NULL)
+		{
+			if(ptr->data > cpt->data)
+			{
+				temp=ptr->data;
+				ptr->data=cpt->data;
+				cpt->data=temp;
+			}
+			cpt=cpt->link;
+		}
+		ptr=ptr->link;
+	}
+}
+
+

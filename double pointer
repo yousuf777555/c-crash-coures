@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<stdlib.h>
+void fun(int **b);
+int main()
+{
+        int *p,i;
+        p=(int *)malloc( 5*sizeof(int));
+        for(i=0;i<5;i++)
+        {
+                scanf("%d",p+i);
+        }
+        fun(&p);
+}
+void fun(int **b)
+{
+        int i=0;
+        for( int j=0;j<5;j++)
+        {
+                printf("%d",*(*b+j));
+
+        }
+
+}

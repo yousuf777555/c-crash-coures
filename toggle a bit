@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main()
+{
+        int a,b,i;
+        printf("enter the number and position");
+        scanf("%d%d",&a,&b);//1010
+         if(a&(0x1<<b))
+          {
+                  printf(" bit is set i.e 1\n");
+          }
+          else
+          {
+                  printf(" bit is not set i.e 0\n");
+          }
+           printf("toggle %d\n",a^((0x1<<b)));
+
+
+                        }
